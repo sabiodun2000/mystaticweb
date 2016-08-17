@@ -1,13 +1,9 @@
 #
 # Cookbook Name:: mywebcookbook
 # Recipe:: web
-#
 # Copyright (c) 2016 Sam Abiodun, All Rights Reserved.
-#
-#
 
-# Install Apache and start the service
-#
+# Install and start apache service
 httpd_service 'mystaticweb' do
     mpm 'prefork'
     action [:create, :start]
@@ -25,9 +21,7 @@ directory node['mystaticweb']['document_root'] do
     recursive true
 end
 
-
-
-# Write the home page
+# Write homepage to display Hello World message
 
 file "#{node['mystaticweb']['document_root']}/index.html" do
     content '<html>
