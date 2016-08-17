@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: awesome_customers_ubuntu
+# Cookbook Name:: mywebcookbook
 # Recipe:: web
 #
-# Copyright (c) 2016 The Authors, All Rights Reserved.
+# Copyright (c) 2016 Sam Abiodun, All Rights Reserved.
 #
 #
 
@@ -21,21 +21,19 @@ http_config 'customers' do
 end
 
 # Create document root
-directory node['awesome_customers_ubuntu']['document_root'] do
+directory node[mystaticweb]['document_root'] do
     recursive true
 end
 
+# Write and display Hello World message in home page
 
-
-# Write the home page
-
-file "#{node['awesome_customers_ubuntu']['document_root']}/index.html" do
+file "#{node['mystaticweb']['document_root']}/index.html" do
     content '<html>
                 <head>
                      <title>Hello World</title>
                 </head>
                 <body>
-                    <h1>Hello World!!</h1>
+                    <h1>Hello World!</h1>
                 </body>
             </html>'
     mode '0644'
