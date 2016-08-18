@@ -1,7 +1,0 @@
-#!/bin/sh
-
-
-printf "\nhostname:		<%= node['hostname'] %>"
-printf "\nfqdn:			<%= node['fdqn'] %>"
-printf "\nmemory: 		<%= node['memory']['total'] %>"
-printf "\ncpu count:	<%= node['cpu']['total'] %>\n"
